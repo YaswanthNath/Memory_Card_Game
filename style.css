@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Tourney:wght@700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    
+}
+memory-game{
+    padding: 2px;
+    margin: 20px;
+    background-color: rgba(255, 255, 255, 0.027);
+}
+.ts {
+    color: rgb(255, 255, 255);
+    background-color: #EB4D4B;
+    width: 95%;
+    text-align: center;
+    align-items: center;
+    padding: 6px 14px ;
+    margin: auto auto auto 45px;
+    border-radius: 50px;
+}
+
+header {
+    text-align: center;
+    color: #EB4D4B;
+    font-weight: 900;
+    font-family: 'Dancing Script', cursive;
+}
+
+.memory-game{
+    perspective: 1000px;/*to perform 3d rotate*/
+}
+
+.memory-card {
+    width: 22%;
+    height: 185px;
+    position: relative;
+    padding: 5px;
+    margin: 5px -15px 15px -10px;
+    transform: scale(1);
+
+    transform-style: preserve-3d;/*to perform 3d rotate*/
+    transition: transform .5s;/*to perform 3d rotate*/
+}
+
+.memory-card:active {
+    transform: scale(0.97);
+    transition: transform .2s;
+  }
+
+.memory-card.flip {
+    transform: rotatey(180deg);/*to rotate by 180deg */
+}
+
+.back-face , .front-face{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+    padding: 0;
+    margin: 0;
+    border-radius: 5px;
+
+    backface-visibility: hidden;/*to hide the back img*/
+}
+.back-face {
+    transform: rotateY(180deg); /*to rotate front-face to back-face*/
+}
